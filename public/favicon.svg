@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="disc">
+      <circle cx="16" cy="16" r="15.15"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#disc)">
+    <rect width="16" height="32" fill="#CB1E1C"/>
+    <rect x="16" width="16" height="32" fill="#1A5A85"/>
+  </g>
+  <g fill="#ECECEE">
+    <rect x="8.6" y="6.2" width="14.8" height="2.15" rx="0.2"/>
+    <rect x="14.95" y="6.2" width="2.1" height="19.6" rx="0.2"/>
+    <rect x="7.6" y="11.8" width="16.8" height="1.9" rx="0.2"/>
+    <rect x="7.6" y="20.3" width="16.8" height="1.9" rx="0.2"/>
+    <rect x="7.6" y="11.8" width="1.9" height="10.4" rx="0.2"/>
+    <rect x="22.5" y="11.8" width="1.9" height="10.4" rx="0.2"/>
+  </g>
+  <circle cx="16" cy="16" r="15.15" fill="none" stroke="#C8CCD0" stroke-width="1.5"/>
+</svg>
