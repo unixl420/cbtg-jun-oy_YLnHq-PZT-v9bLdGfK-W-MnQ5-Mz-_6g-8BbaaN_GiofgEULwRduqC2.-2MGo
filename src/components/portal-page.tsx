@@ -1,20 +1,38 @@
-import { ArrowUpRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Dna, FlaskConical, Globe2, type LucideIcon } from "lucide-react";
 
-const COMPANIES = [
+const WORK: {
+  icon: LucideIcon;
+  zh: string;
+  en: string;
+  zhBody: string;
+  enBody: string;
+  accent: "red" | "blue";
+}[] = [
   {
-    id: "shenzhen",
-    href: "https://www.shenzhenpeptide.com",
-    domain: "shenzhenpeptide.com",
-    logo: "/logos/shenzhen-peptide.png",
+    icon: FlaskConical,
+    zh: "研究",
+    en: "Research",
+    zhBody: "研究生物系统，包括分子与遗传层面的科学工作。",
+    enBody: "Research on biological systems, including molecular and genetic science.",
+    accent: "red",
   },
   {
-    id: "guangzhou",
-    href: "https://www.guangzhoupeptide.com",
-    domain: "guangzhoupeptide.com",
-    logo: "/logos/guangzhou-peptide.png",
+    icon: Dna,
+    zh: "开发",
+    en: "Development",
+    zhBody: "把研究发现整理为可以继续推进的开发工作。",
+    enBody: "Organizing research findings into development work that can continue.",
+    accent: "blue",
   },
-] as const;
+  {
+    icon: Globe2,
+    zh: "国际协作",
+    en: "International coordination",
+    zhBody: "以集团为同一套标准，协调跨境的生命科学工作。",
+    enBody: "Coordinating life-science work across borders under one group standard.",
+    accent: "red",
+  },
+];
 
 export function PortalPage() {
   return (
@@ -24,9 +42,10 @@ export function PortalPage() {
         <span className="bg-blob bg-blob-blue" />
         <span className="bg-blob bg-blob-mist" />
       </div>
-      <section className="relative z-10 flex min-h-dvh flex-col items-center justify-center px-5 py-16 sm:px-8 sm:py-24">
+
+      <section className="relative z-10 flex flex-col items-center px-5 pt-16 pb-10 sm:px-8 sm:pt-24 sm:pb-14">
         <div className="relative z-10 flex w-full max-w-5xl flex-col items-center">
-          <div className="relative mb-1 flex size-44 items-center justify-center sm:mb-2 sm:size-72">
+          <div className="relative mb-1 flex size-44 items-center justify-center sm:mb-2 sm:size-64">
             <span className="mark-halo" aria-hidden="true" />
             <div className="mark-orbits" aria-hidden="true">
               <span className="orbit-ring orbit-solid" />
@@ -48,7 +67,7 @@ export function PortalPage() {
                 alt=""
                 width={494}
                 height={490}
-                className="w-32 object-contain sm:w-52"
+                className="w-32 object-contain sm:w-48"
               />
             </div>
           </div>
@@ -62,64 +81,79 @@ export function PortalPage() {
             </span>
           </h1>
 
-          <div
-            className="portal-enter portal-delay-2 mt-6 mb-6 flex items-center gap-3 sm:mt-10 sm:mb-10"
-            aria-hidden="true"
-          >
-            <span className="hero-rule hero-rule-red" />
-            <span className="text-xs font-medium tracking-label text-subtle uppercase">
-              Internationals
+          <p className="portal-enter portal-delay-2 mt-6 max-w-xl text-center text-sm leading-relaxed text-muted sm:text-base">
+            从事生命科学研究、开发与国际协作。
+            <span className="mt-1 block text-subtle">
+              Life-science research, development, and international coordination.
             </span>
+          </p>
+        </div>
+      </section>
+
+      <section
+        aria-labelledby="group-work-heading"
+        className="relative z-10 px-5 pb-20 sm:px-8 sm:pb-28"
+      >
+        <div className="mx-auto w-full max-w-5xl">
+          <div className="portal-enter portal-delay-2 mb-8 flex items-center gap-3 sm:mb-10">
+            <span className="hero-rule hero-rule-red" />
+            <h2
+              id="group-work-heading"
+              className="text-xs font-medium tracking-label text-subtle uppercase"
+            >
+              集团业务
+              <span className="sr-only"> — What the group does</span>
+            </h2>
             <span className="hero-rule hero-rule-blue" />
           </div>
 
-          <nav
-            aria-label="Internationals"
-            className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 md:gap-5"
-          >
-            {COMPANIES.map((company, index) => (
-              <CompanyCard
-                key={company.id}
-                company={company}
-                className={cn("portal-enter", index === 0 ? "portal-delay-3" : "portal-delay-4")}
-              />
+          <p className="portal-enter portal-delay-3 max-w-3xl text-base leading-relaxed text-fg sm:text-lg">
+            中国生物科技集团从事生命科学工作。研究、开发与国际协作是其中的三部分：研究生物系统，把研究发现推进为开发项目，并以同一套组织协调跨境工作。
+          </p>
+          <p className="portal-enter portal-delay-3 mt-3 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
+            China Biotech Group works in the life sciences. That work has three parts: research on
+            biological systems, development that carries findings forward, and one organization
+            coordinating the work across borders.
+          </p>
+
+          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
+            {WORK.map((item, index) => (
+              <WorkCard key={item.en} item={item} index={index} />
             ))}
-          </nav>
+          </div>
         </div>
       </section>
     </main>
   );
 }
 
-function CompanyCard({
-  company,
-  className,
+function WorkCard({
+  item,
+  index,
 }: {
-  company: (typeof COMPANIES)[number];
-  className?: string;
+  item: (typeof WORK)[number];
+  index: number;
 }) {
+  const Icon = item.icon;
+  const delay = index === 0 ? "portal-delay-3" : index === 1 ? "portal-delay-4" : "portal-delay-4";
+
   return (
-    <a
-      href={company.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`Open ${company.domain}`}
-      className={cn(
-        "company-card group relative flex flex-col overflow-hidden rounded-xl bg-surface p-4 shadow-[var(--shadow-border)]",
-        "transition-[box-shadow,background-color,transform,scale] duration-200 ease-out",
-        "hover:bg-surface-hover hover:shadow-[var(--shadow-border-hover)]",
-        "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fg",
-        "sm:p-5",
-        className,
-      )}
+    <article
+      className={`portal-enter ${delay} flex flex-col rounded-xl bg-surface p-5 shadow-[var(--shadow-border)] sm:p-6`}
     >
-      <img src={company.logo} alt="" width={3500} height={1000} className="h-auto w-full" />
-      <div className="mt-3 flex min-h-11 items-center justify-end gap-1.5">
-        <p className="truncate text-sm leading-none text-muted">{company.domain}</p>
-        <span className="flex size-8 shrink-0 items-center justify-center text-muted transition-[color,transform] duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-fg">
-          <ArrowUpRight className="size-4" strokeWidth={1.75} aria-hidden="true" />
-        </span>
-      </div>
-    </a>
+      <span
+        className={
+          item.accent === "red"
+            ? "flex size-10 items-center justify-center rounded-full bg-mark-red/15 text-mark-red"
+            : "flex size-10 items-center justify-center rounded-full bg-mark-blue/20 text-mark-blue"
+        }
+      >
+        <Icon className="size-5" strokeWidth={1.75} aria-hidden="true" />
+      </span>
+      <h3 className="mt-5 font-display text-xl font-medium text-fg">{item.zh}</h3>
+      <p className="mt-1 text-xs font-medium tracking-brand text-subtle uppercase">{item.en}</p>
+      <p className="mt-4 text-sm leading-relaxed text-fg">{item.zhBody}</p>
+      <p className="mt-2 text-sm leading-relaxed text-muted">{item.enBody}</p>
+    </article>
   );
 }
