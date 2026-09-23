@@ -107,10 +107,10 @@ export function PortalPage() {
             <span className="hero-rule hero-rule-blue" />
           </div>
 
-          <p className="portal-enter portal-delay-3 max-w-3xl text-base leading-relaxed text-fg sm:text-lg">
+          <p className="portal-enter portal-delay-3 mx-auto max-w-3xl text-center text-base leading-relaxed text-fg sm:text-lg">
             中国生物科技集团从事生命科学工作。研究、开发与国际协作是其中的三部分：研究生物系统，把研究发现推进为开发项目，并以同一套组织协调跨境工作。
           </p>
-          <p className="portal-enter portal-delay-3 mt-3 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
+          <p className="portal-enter portal-delay-3 mx-auto mt-3 max-w-3xl text-center text-sm leading-relaxed text-muted sm:text-base">
             China Biotech Group works in the life sciences. That work has three parts: research on
             biological systems, development that carries findings forward, and one organization
             coordinating the work across borders.
