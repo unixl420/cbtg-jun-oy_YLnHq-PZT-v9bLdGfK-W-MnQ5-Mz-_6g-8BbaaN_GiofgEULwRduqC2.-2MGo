@@ -124,13 +124,28 @@ export function PortalPage() {
         </div>
       </section>
 
-      <footer className="relative z-10 px-5 pb-10 text-center sm:pb-12">
+      <footer className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center gap-4 px-5 pb-10 text-center sm:pb-12">
+        <p className="text-[0.65625rem] leading-relaxed text-subtle">
+          This site is an informational publication of a coordinating designation. Content describes
+          research, development, and cross-border organisation in the life sciences in general terms
+          only. Publication of the designation “China Biotech Group,” of any mark, address, or
+          contact, or of any page on this host, is not an offer to sell, a prospectus, a supply
+          contract, a warranty of merchantability or fitness, a representation of manufacture or
+          import, or an undertaking as to any particular item, person, payment, use, or
+          jurisdiction. Independent processors, if any, operate under their own terms on separate
+          hosts. Accessing this page does not create a duty, agency, partnership, or continuing
+          obligation.
+        </p>
         <a
           href="mailto:contact@chinabiotechgroup.com"
           className="text-sm text-muted underline-offset-4 transition-colors duration-200 hover:text-fg hover:underline"
         >
           contact@chinabiotechgroup.com
         </a>
+        <p className="text-[0.65625rem] leading-relaxed text-subtle">
+          © China Biotech Group — informational publication. Separate hosts are not incorporated by
+          reference.
+        </p>
       </footer>
     </main>
   );
