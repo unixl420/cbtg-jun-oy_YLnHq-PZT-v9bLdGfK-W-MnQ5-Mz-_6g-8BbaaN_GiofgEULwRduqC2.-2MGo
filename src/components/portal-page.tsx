@@ -136,12 +136,7 @@ export function PortalPage() {
           hosts. Accessing this page does not create a duty, agency, partnership, or continuing
           obligation.
         </p>
-        <a
-          href="mailto:contact@chinabiotechgroup.com"
-          className="text-sm text-muted underline-offset-4 transition-colors duration-200 hover:text-fg hover:underline"
-        >
-          contact@chinabiotechgroup.com
-        </a>
+        <p className="text-sm text-muted">contact@chinabiotechgroup.com</p>
         <p className="text-[0.65625rem] leading-relaxed text-subtle">
           © China Biotech Group — informational publication. Separate hosts are not incorporated by
           reference.
