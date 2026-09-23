@@ -95,7 +95,7 @@ export function PortalPage() {
         className="relative z-10 px-5 pb-20 sm:px-8 sm:pb-28"
       >
         <div className="mx-auto w-full max-w-5xl">
-          <div className="portal-enter portal-delay-2 mb-8 flex items-center gap-3 sm:mb-10">
+          <div className="portal-enter portal-delay-2 mb-8 flex items-center justify-center gap-3 sm:mb-10">
             <span className="hero-rule hero-rule-red" />
             <h2
               id="group-work-heading"
