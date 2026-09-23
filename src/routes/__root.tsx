@@ -14,7 +14,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "China Biotech Group — 中国生物科技集团.",
+          "China Biotech Group — 中国生物科技集团。生命科学研究、开发与国际协作。",
       },
       { name: "theme-color", content: "#050506" },
     ],
