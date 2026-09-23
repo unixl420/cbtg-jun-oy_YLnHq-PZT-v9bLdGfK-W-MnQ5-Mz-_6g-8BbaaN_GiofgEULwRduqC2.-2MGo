@@ -92,14 +92,14 @@ export function PortalPage() {
 
       <section
         aria-labelledby="group-work-heading"
-        className="relative z-10 px-5 pb-20 sm:px-8 sm:pb-28"
+        className="relative z-10 px-5 pb-16 sm:px-8 sm:pb-20"
       >
         <div className="mx-auto w-full max-w-5xl">
           <div className="portal-enter portal-delay-2 mb-8 flex items-center justify-center gap-3 sm:mb-10">
             <span className="hero-rule hero-rule-red" />
             <h2
               id="group-work-heading"
-              className="text-[1.125rem] font-medium tracking-label text-subtle uppercase"
+              className="text-[2rem] font-medium leading-none tracking-wide text-subtle"
             >
               集团业务
               <span className="sr-only"> — What the group does</span>
@@ -123,6 +123,15 @@ export function PortalPage() {
           </div>
         </div>
       </section>
+
+      <footer className="relative z-10 px-5 pb-10 text-center sm:pb-12">
+        <a
+          href="mailto:contact@chinabiotechgroup.com"
+          className="text-sm text-muted underline-offset-4 transition-colors duration-200 hover:text-fg hover:underline"
+        >
+          contact@chinabiotechgroup.com
+        </a>
+      </footer>
     </main>
   );
 }
