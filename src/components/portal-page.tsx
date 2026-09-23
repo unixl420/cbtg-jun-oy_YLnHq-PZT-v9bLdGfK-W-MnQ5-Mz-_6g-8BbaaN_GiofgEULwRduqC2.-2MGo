@@ -99,7 +99,7 @@ export function PortalPage() {
             <span className="hero-rule hero-rule-red" />
             <h2
               id="group-work-heading"
-              className="text-[2rem] font-medium leading-none tracking-wide text-subtle"
+              className="text-[1.75rem] font-medium leading-none tracking-wide text-subtle"
             >
               集团业务
               <span className="sr-only"> — What the group does</span>
